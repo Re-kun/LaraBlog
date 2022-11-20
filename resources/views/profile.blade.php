@@ -21,8 +21,13 @@
     </div>
 
     <div>
-        <h1 class="pt-20  text-4xl text-center border-b border-gray-200 pb-4 mb-16">Posts</h1>
-        <a href="/post/create" class="bg-white border border-gray-300 hover:bg-gray-100 text-sm ml-2 p-2 rounded-lg">+ Add Post</a>
+        <div class="pt-20 text-4xl border-b border-gray-200 pb-4 mb-16"></div>
+        <div class="flex justify-between w-full items-center">
+            <a href="/post/create" class="bg-white border border-gray-300 hover:bg-gray-100 text-sm ml-2 p-2 rounded-lg">+ Add Post</a>
+            <a href="/category" class="mr-2"> 
+                <img src="{{ asset("icon/category.svg") }}" width="20" alt="">
+            </a>
+        </div>
         <div class="grid mt-8 gap-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
             @foreach(Auth::user()->posts as $post)
                 <div class="w-[95%] md:mx-auto sm:mx-36">
@@ -32,7 +37,7 @@
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">
                             <div class="grid grid-cols-4 gap-4 mb-2">
-                                <a class="text-sm py-1 text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</a>
+                                <a href="" class="text-sm py-1 text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</a>
                             </div>
                             <a href="#">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $post->title }}</h5>

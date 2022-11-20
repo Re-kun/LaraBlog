@@ -9,7 +9,7 @@
     <x-feature></x-feature>
 
     {{-- post --}}
-        <h1 class="pt-32 mt-40 pb-24 text-4xl text-center">Latest Post</h1>
+        <h2 class="pt-32 mt-40 pb-24  text-center text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Latest Post</h2>
         <div class="grid gap-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
             
             <div class="w-[95%] md:mx-auto sm:mx-36">

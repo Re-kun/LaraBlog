@@ -12,10 +12,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category)
+    public function index()
     {
-        return view("blog", [
-            "posts" => $category->post
+        return view("category",[
+            "categories" => Category::get()
         ]);
     }
 
@@ -48,7 +48,9 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view("blog", [
+            "posts" => $category->post
+        ]);
     }
 
     /**

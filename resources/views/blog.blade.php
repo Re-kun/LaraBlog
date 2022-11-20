@@ -2,7 +2,7 @@
     <x-search_input></x-search_input>
 
     <div>
-        <h1 class="pt-16 pb-24 text-4xl text-center">Latest Post</h1>
+        <h1 class="pt-16 pb-24 text-4xl text-center font-semibold">Latest Post</h1>
         <div class="grid gap-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
             
         @foreach($posts as $post)
