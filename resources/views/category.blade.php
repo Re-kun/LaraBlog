@@ -1,6 +1,6 @@
 <x-main>
     <h1 class="pt-16 pb-24 text-4xl text-center font-semibold">Categories</h1>
-    <a href="/post/create" class="bg-white border border-gray-300 hover:bg-gray-100 text-sm ml-2 p-2  rounded-lg">+ Add Category</a>
+    <a href="{{ route("category.create") }}" class="bg-white border border-gray-300 hover:bg-gray-100 text-sm ml-2 p-2  rounded-lg">+ Add Category</a>
     <div class="grid grid-cols-3 mt-7 gap-y-5 ">
         @foreach($categories as $category)
         <div class="w-[95%] md:mx-auto sm:mx-36">

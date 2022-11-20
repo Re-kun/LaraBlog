@@ -23,8 +23,9 @@ use Illuminate\Support\Facades\Route;
     Route::view('/', "home")->name("home");
     Route::view('/about', "about")->name("about");
     Route::get("/blog", [BlogController::class, "index"])->name("blog");
-    Route::resource("/category", CategoryController::class)->except(["create", "store", "destroy", "edit", "update"]);
-    
+    Route::get("/category", [ CategoryController::class, "index"])->name("category.index");    
+    Route::get("/category/{category:slug}", [ CategoryController::class, "show"])->name("category.show");
+
     Route::middleware("guest")->group(function () {
         // authentication
         Route::get("/login", [LoginController::class, "index"])->name("login");
@@ -34,7 +35,9 @@ use Illuminate\Support\Facades\Route;
     });
     
     Route::middleware("auth")->group(function () {
-        // Route::view("/dashboard", "dashboard.index");
+        Route::get("/hi", function () {
+            return "hi";
+        });
         Route::get("/profile", [ProfileController::class, "index"])->name("profile");
         Route::resource("/post", PostController::class)->except(["index"]);
         Route::post("/logout", LogoutController::class);
