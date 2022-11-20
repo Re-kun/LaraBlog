@@ -20,25 +20,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    Route::view('/', "home")->name("home");
-    Route::view('/about', "about")->name("about");
-    Route::get("/blog", [BlogController::class, "index"])->name("blog");
-    Route::get("/category", [ CategoryController::class, "index"])->name("category.index");    
-    Route::get("/category/{category:slug}", [ CategoryController::class, "show"])->name("category.show");
 
-    Route::middleware("guest")->group(function () {
-        // authentication
-        Route::get("/login", [LoginController::class, "index"])->name("login");
-        Route::post("/login", [LoginController::class, "login"]);
-        Route::get("/register", [RegisterController::class, "index"]);
-        Route::post("/register", [RegisterController::class, "register"]);
+Route::middleware("guest")->group(function () {
+    // authentication
+    Route::get("/login", [LoginController::class, "index"])->name("login");
+    Route::post("/login", [LoginController::class, "login"]);
+    Route::get("/register", [RegisterController::class, "index"]);
+    Route::post("/register", [RegisterController::class, "register"]);
+});
+
+Route::middleware("auth")->group(function () {
+    Route::get("/category/create", function () {
+        return "hi";
     });
-    
-    Route::middleware("auth")->group(function () {
-        Route::get("/hi", function () {
-            return "hi";
-        });
-        Route::get("/profile", [ProfileController::class, "index"])->name("profile");
-        Route::resource("/post", PostController::class)->except(["index"]);
-        Route::post("/logout", LogoutController::class);
-    });
+    Route::get("/profile", [ProfileController::class, "index"])->name("profile");
+    Route::resource("/post", PostController::class)->except(["index"]);
+    Route::post("/logout", LogoutController::class);
+});
+
+Route::view('/', "home")->name("home");
+Route::view('/about', "about")->name("about");
+Route::get("/blog", [BlogController::class, "index"])->name("blog");
+Route::get("/category", [ CategoryController::class, "index"])->name("category.index");    
+Route::get("/category/{category:slug}", [ CategoryController::class, "show"])->name("category.show");
