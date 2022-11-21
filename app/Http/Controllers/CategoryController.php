@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\categoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    public function __construct(){
+        return $this->middleware("auth")->except("index", "show");
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,9 +41,15 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(categoryRequest $request)
     {
-        //
+        $newCategory = [
+            "name" => $request->name,
+            "slug" => $request->slug
+        ];
+
+        Category::create($newCategory);
+        return redirect("/category");
     }
 
     /**
@@ -61,7 +73,9 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view("category.edit", [
+            "category" => $category
+        ]);
     }
 
     /**
@@ -84,6 +98,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::find($category->id)->delete();
+        return back();
     }
 }
