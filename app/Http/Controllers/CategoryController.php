@@ -87,7 +87,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $updateCategory = [
+            "name" => $request->name,
+            "slug" => $request->slug
+        ];
+
+        Category::find($category->id)->update($updateCategory);
+        return redirect("/category");
     }
 
     /**
