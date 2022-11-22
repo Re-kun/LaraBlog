@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\userRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -38,9 +39,17 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(userRequest $request)
     {
-        //
+        $newUser = [
+            "name" => $request->name,
+            "username" => $request->username,
+            "email" => $request->email,
+            "password" => bcrypt($request->password)
+        ];
+
+        User::create($newUser);
+        return redirect("/user");
     }
 
     /**
@@ -62,7 +71,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view("user.edit", [
+            "user" => $user
+        ]);
     }
 
     /**
@@ -74,7 +85,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $updateData = $request->validate([
+           "name" => "required",
+           "username" => "required",
+        ]);
+
+        User::find($user->id)->update($updateData);
+        return redirect("/user");
     }
 
     /**
@@ -85,6 +102,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::find($user->id)->delete();
+        return redirect("/user");
     }
 }

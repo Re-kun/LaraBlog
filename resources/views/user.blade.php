@@ -14,10 +14,10 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700">{{ $user->email }}</p>
                     <div class="flex items-center">
-                        <a href="">
+                        <a href="{{ route("user.edit", $user->username) }}">
                             <img src="{{ asset("icon/edit.svg") }}" width="19" alt="">
                         </a>
-                        <form method="POST" action="" class="mt-2">
+                        <form method="POST" action="{{ route("user.destroy", $user->username) }}" class="mt-2">
                             @method("DELETE")
                             @csrf
                             <button type="submit">
