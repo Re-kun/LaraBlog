@@ -10,6 +10,7 @@
 <body>
 <main class="flex justify-center py-14">
     <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+       
         <form class="space-y-6" action="{{ route("user.store") }}" method="POST">
             @csrf
             <h5 class="text-xl font-medium text-center text-gray-900 dark:text-white">Add User</h5>
@@ -47,6 +48,7 @@
                 Alredy have account ? <a href="/login" class="text-blue-700 hover:underline dark:text-blue-500">Login</a>
             </div>
         </form>
+   
     </div>
 </main>
 

@@ -33,6 +33,7 @@
                 </a>
             </div>
         </div>
+
         <div class="grid gap-2 mt-8 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
             @foreach(Auth::user()->posts as $post)
                 <div class="w-[95%] md:mx-auto sm:mx-36">
@@ -65,5 +66,6 @@
                 </div>
             @endforeach
         </div>
+        
     </div>
 </x-main> 

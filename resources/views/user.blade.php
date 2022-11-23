@@ -1,6 +1,7 @@
 <x-main>
     <h1 class="pt-16 pb-24 text-4xl font-semibold text-center">Users</h1>
     <a href="{{ route("user.create") }}" class="p-2 ml-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-100">+ Add User</a>
+    
     <div class="grid grid-cols-3 mt-7 gap-y-5 ">
         @foreach($users as $user)
         <div class="w-[95%] md:mx-auto sm:mx-36">
@@ -30,4 +31,5 @@
         </div>
         @endforeach
     </div>
+
 </x-main>

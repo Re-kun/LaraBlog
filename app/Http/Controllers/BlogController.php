@@ -7,8 +7,15 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index (){
-        return view("blog",[
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke(Request $request)
+    {
+        return view("blog", [
             "posts" => Post::get()
         ]);
     }

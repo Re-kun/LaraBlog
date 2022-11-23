@@ -31,14 +31,13 @@ Route::middleware("guest")->group(function () {
 });
 
 Route::middleware("auth")->group(function () {
-    
-    Route::get("/profile", [ProfileController::class, "index"])->name("profile");
+    Route::get("/profile", ProfileController::class)->name("profile");
     Route::resource("/post", PostController::class)->except(["index"]);
     Route::post("/logout", LogoutController::class);
 });
 
 Route::view('/', "home")->name("home");
 Route::view('/about', "about")->name("about");
-Route::get("/blog", [BlogController::class, "index"])->name("blog");
+Route::get("/blog", BlogController::class)->name("blog");
 Route::resource("/category", CategoryController::class);
 Route::resource("/user", UserController::class);

@@ -24,7 +24,7 @@ class LoginController extends Controller
         }
 
         throw ValidationException::withMessages([
-            "email" => "Invalid Email"
+            "error" => "Something wrong i can feel it"
         ]);
     }
 }
