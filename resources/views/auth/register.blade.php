@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    <style>
+        body{
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
 <main class="flex justify-center py-14">

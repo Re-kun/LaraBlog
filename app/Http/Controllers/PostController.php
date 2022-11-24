@@ -53,7 +53,9 @@ class PostController extends Controller
             "body" => $request->body
         ];
 
-        $newPost["image"] = $request->file("image")->store("post-images");
+        if($request->file("image")){
+            $newPost["image"] = $request->file("image")->store("post-images");
+        }
 
         Post::create($newPost);
         return redirect("/profile");
@@ -123,6 +125,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        // Remove image
+        Storage::delete($post->image);
+
         Post::find($post->id)->delete();
         return redirect("/profile");
     }

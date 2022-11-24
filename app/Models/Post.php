@@ -18,6 +18,24 @@ class Post extends Model
         "body"
     ];
 
+    public function scopeFilter ($query, array $search){
+        $query->when($search["search"] ?? false, function ($query, $search){
+            return $query->where("title", "like", "%" . $search . "%");
+        });
+
+        $query->when($search["category"] ?? false, function ($query, $category) {
+            return $query->whereHas("category", function ($query) use ($category) {
+                return $query->where("slug", "like", "%" . $category . "%");
+            });
+        });
+
+        $query->when($search["user"] ?? false, function ($query, $user) {
+            return $query->whereHas("user", function ($query) use ($user) {
+                return $query->where("username", "like", "%" . $user . "%");
+            });
+        });
+    }
+
     public function user (){
         return $this->belongsTo(User::class, "user_id");
     }

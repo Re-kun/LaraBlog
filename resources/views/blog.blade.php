@@ -1,8 +1,7 @@
 <x-main>
     <x-search_input></x-search_input>
     <div>
-        
-        <h1 class="pt-16 pb-24 text-4xl font-semibold text-center">Latest Post</h1>
+        <h1 class="pt-24 pb-24 text-4xl font-semibold text-center">Latest Post</h1>
         <div class="grid gap-2 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">
             @foreach($posts as $post)
                 <div class="w-[95%] md:mx-auto sm:mx-36">
@@ -28,6 +27,6 @@
                 </div>
             @endforeach
         </div>
-        
+        {{ $posts->links() }}
     </div>
 </x-main>

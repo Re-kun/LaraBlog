@@ -1,6 +1,6 @@
 <x-main>
     <div class="px-40 mt-20">
-       
+        <h1 class="pb-20 text-3xl font-semibold text-center">Create Category</h1>
         <form class="w-full" action="{{ route("category.store") }}" method="POST">
             @csrf
             <div class="mb-6">

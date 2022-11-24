@@ -1,27 +1,38 @@
 <x-main>
-    <div class="flex flex-col items-center mt-20">
-        <img src="{{ asset("image/kazuma.png") }}" alt="" class="rounded-full">
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{{ Auth::user()->name }}</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">{{ Auth::user()->email }}</span>
-        <div class="flex justify-center w-full px-20 mt-10">
-            <div class="py-5 text-center px-7">
-                <h1 class="text-2xl font-semibold">{{ Auth::user()->posts->count() }}</h1>
-                <p class="text-sm text-gray-500">Post</p>
+    <div class="flex px-5 mt-5 md:justify-between">
+        <div class="">
+            <img src="{{ asset("image/kazuma.png") }}" alt="" class="w-full p-1 mt-5 border-2 border-blue-600 rounded-full sm:block md:w-auto sm:w-32">
+        </div>
+        <div class="flex flex-col items-start md:flex-row">
+            <div class="p-4 ml-5">
+                <h5 class="text-lg font-bold text-gray-900 sm:text-3xl dark:text-white">{{ Auth::user()->name }}</h5>
+                <div class="flex items-center w-full">
+                    <div class="text-center sm:py-5 sm:pr-7">
+                        <h1 class="text-lg font-semibold sm:text-2xl">{{ Auth::user()->posts->count() }}</h1>
+                        <p class="text-sm text-gray-500">Post</p>
+                    </div>
+                    <div class="text-center sm:py-5 sm:px-7">
+                        <h1 class="text-lg font-semibold sm:text-2xl">0</h1>
+                        <p class="text-sm text-gray-500">Follower</p>
+                    </div>       
+                    <div class="text-center sm:px-4 sm:py-5">
+                        <h1 class="text-lg font-semibold sm:text-2xl">0</h1>
+                        <p class="text-sm text-gray-500">Followed</p>
+                    </div>
+                   
+                </div>
             </div>
-            <div class="py-5 text-center px-7">
-                <h1 class="text-2xl font-semibold">0</h1>
-                <p class="text-sm text-gray-500">Follower</p>
-            </div>       
-            <div class="px-4 py-5 text-center">
-                <h1 class="text-2xl font-semibold">0</h1>
-                <p class="text-sm text-gray-500">Followed</p>
+            <div class="">
+                <a href="#" class="sm:px-[6.5rem] py-2 mr-3 text-sm font-medium text-center text-right text-white bg-blue-700 rounded-lg ml-9 md:ml-3 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Follow</a>
             </div>
         </div>
-        <a href="#" class="py-2 ml-5 mr-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg px-28 sm:px-32 md:ml-3 md:px-28 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Follow</a>
+        
     </div>
+    
+<div class=""></div>
 
     <div>
-        <div class="pt-20 pb-4 mb-16 text-4xl border-b border-gray-200"></div>
+        <div class="pt-10 pb-4 mb-16 text-4xl shadow-md shadow-gray-100"></div>
         <div class="flex items-center justify-between w-full">
             <a href="/post/create" class="p-2 ml-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-100">+ Add Post</a>
             <div class="flex">

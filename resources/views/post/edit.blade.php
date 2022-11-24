@@ -1,6 +1,6 @@
 <x-main>
     <div class="px-40 mt-20">
-        
+        <h1 class="pb-10 text-3xl font-semibold text-center">Edit Post</h1>
         <form class="w-full" enctype="multipart/form-data" action="{{ route("post.update", $post->slug) }}" method="POST">
             @method("PUT")
             @csrf

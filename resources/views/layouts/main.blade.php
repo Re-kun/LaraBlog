@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    <style>
+      body {
+        font-family: monospace;
+      }
+    </style>
 </head>
 <body >
     <x-navbar></x-navbar>
-    <main class="overflow-hidden px-5 sm:px-10 md:px-28 lg:px-32">
+    <main class="px-5 overflow-hidden sm:px-10 md:px-28 lg:px-32">
       {{ $slot }}
     </main>
     <x-footer></x-footer>

@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function __invoke(Request $request)
     {
         return view("blog", [
-            "posts" => Post::get()
+            "posts" => Post::filter(request(["search", "category", "user"]))->paginate(6)
         ]);
     }
 }
