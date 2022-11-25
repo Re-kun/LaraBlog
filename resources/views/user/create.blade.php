@@ -1,5 +1,5 @@
 <x-main>
-    <div class="px-40 mt-20">
+    <div class="px-2 mt-20 sm:px-20 sm:px-40">
         <h1 class="pb-10 text-3xl font-semibold text-center">Create User</h1>
         <form class="w-full" enctype="multipart/form-data" action="{{ route("user.create") }}" method="POST">
             @csrf

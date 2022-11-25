@@ -1,38 +1,37 @@
 <x-main>
-    <div class="flex px-5 mt-5 md:justify-between">
-        <div class="">
-            <img src="{{ asset("image/kazuma.png") }}" alt="" class="w-full p-1 mt-5 border-2 border-blue-600 rounded-full sm:block md:w-auto sm:w-32">
-        </div>
-        <div class="flex flex-col items-start md:flex-row">
-            <div class="p-4 ml-5">
-                <h5 class="text-lg font-bold text-gray-900 sm:text-3xl dark:text-white">{{ Auth::user()->name }}</h5>
-                <div class="flex items-center w-full">
-                    <div class="text-center sm:py-5 sm:pr-7">
-                        <h1 class="text-lg font-semibold sm:text-2xl">{{ Auth::user()->posts->count() }}</h1>
-                        <p class="text-sm text-gray-500">Post</p>
+    <div class="flex flex-col px-1 sm:px-5 md:justify-between">
+        <div class="flex items-center justify-start md:flex-row">
+            <img src="{{ asset("image/kazuma.png") }}" alt="" class="w-20 p-1 mt-5 border-2 border-blue-600 rounded-full sm:block md:w-auto sm:w-32">
+            <div class="p-4 ">
+                <div class="flex items-center w-full mt-5">
+                    <div class="text-center sm:py-5 sm:pl-8 sm:pr-7">
+                        <h1 class="text-xl font-semibold sm:text-2xl">{{ Auth::user()->posts->count() }}</h1>
+                        <p class="text-[0.7rem] sm:text-sm text-gray-500">Post</p>
                     </div>
-                    <div class="text-center sm:py-5 sm:px-7">
-                        <h1 class="text-lg font-semibold sm:text-2xl">0</h1>
-                        <p class="text-sm text-gray-500">Follower</p>
+                    <div class="ml-5 text-center sm:ml-0 sm:py-5 sm:px-7">
+                        <h1 class="text-xl font-semibold sm:text-2xl">0</h1>
+                        <p class="text-[0.7rem] sm:text-sm text-gray-500">Followers</p>
                     </div>       
-                    <div class="text-center sm:px-4 sm:py-5">
-                        <h1 class="text-lg font-semibold sm:text-2xl">0</h1>
-                        <p class="text-sm text-gray-500">Followed</p>
+                    <div class="ml-4 text-center sm:ml-0 sm:px-4 sm:py-5">
+                        <h1 class="text-xl font-semibold sm:text-2xl">0</h1>
+                        <p class="text-[0.7rem] sm:text-sm text-gray-500">Following</p>
                     </div>
-                   
                 </div>
             </div>
-            <div class="">
-                <a href="#" class="sm:px-[6.5rem] py-2 mr-3 text-sm font-medium text-center text-right text-white bg-blue-700 rounded-lg ml-9 md:ml-3 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Follow</a>
+        </div>
+        <div class="sm:flex sm:items-center sm:mt-3 ">
+            <div>
+                <h5 class="mt-2 text-lg font-bold text-gray-900 sm:text-3xl dark:text-white">{{ Auth::user()->name }}</h5>
+                <p class="font-light text-gray-500 mb-7">{{ Auth::user()->email }}</p>
+            </div>
+            <div>
+                <a h ref="#" class="px-5 py-2 mr-3 font-medium text-white bg-blue-700 rounded-md sm:ml-5 sm:px-10 mtext-sm hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Follow</a>
             </div>
         </div>
-        
     </div>
     
-<div class=""></div>
-
     <div>
-        <div class="pt-10 pb-4 mb-16 text-4xl shadow-md shadow-gray-100"></div>
+        <div class="text-4xl border-t border-gray-200 my-9 "></div>
         <div class="flex items-center justify-between w-full">
             <a href="/post/create" class="p-2 ml-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-100">+ Add Post</a>
             <div class="flex">
@@ -54,7 +53,7 @@
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">
                             <div class="grid grid-cols-4 gap-4 mb-2">
-                                <a href="" class="py-1 text-sm text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</a>
+                                <a href="/blog?category={{ $post->category->slug }}" class="py-1 text-sm text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</a>
                             </div>
                             <a href="#">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $post->title }}</h5>

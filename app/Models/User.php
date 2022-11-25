@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function getRouteKeyName(){
         return "username";
     }
+
+    public function follows(){
+        return $this->belongsToMany(User::class, "follows", "user_id", 'following_user_id' )->withTimestamps();
+    }
 }

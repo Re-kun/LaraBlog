@@ -31,9 +31,9 @@ Route::middleware("guest")->group(function () {
 });
 
 Route::middleware("auth")->group(function () {
+    Route::post("/logout", LogoutController::class);
     Route::get("/profile", ProfileController::class)->name("profile");
     Route::resource("/post", PostController::class)->except(["index"]);
-    Route::post("/logout", LogoutController::class);
 });
 
 Route::view('/', "home")->name("home");

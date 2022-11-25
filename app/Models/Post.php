@@ -28,12 +28,6 @@ class Post extends Model
                 return $query->where("slug", "like", "%" . $category . "%");
             });
         });
-
-        $query->when($search["user"] ?? false, function ($query, $user) {
-            return $query->whereHas("user", function ($query) use ($user) {
-                return $query->where("username", "like", "%" . $user . "%");
-            });
-        });
     }
 
     public function user (){

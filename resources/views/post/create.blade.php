@@ -1,5 +1,5 @@
 <x-main>
-    <div class="px-40 mt-20">
+    <div class="px-2 mt-20 sm:px-20 sm:px-40">
         <h1 class="pb-10 text-3xl font-semibold text-center">Create New Post</h1>
         <form class="w-full" action="{{ route("post.store") }}" method="POST" enctype="multipart/form-data">
             @csrf

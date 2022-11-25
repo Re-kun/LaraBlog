@@ -15,7 +15,7 @@
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">
                             <div class="grid grid-cols-4 gap-4 mb-2">
-                                <p class="py-1 text-sm text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</p>
+                                <a href="/blog?category={{ $post->category->slug }}" class="py-1 text-sm text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</a>
                             </div>
                             <a href="#">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $post->title }}</h5>

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::factory()->count(7)->create();
+        User::factory()->count(5)->create();
 
         Category::create([
             "name" => "Coding",
