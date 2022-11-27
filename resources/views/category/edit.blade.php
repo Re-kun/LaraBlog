@@ -1,5 +1,5 @@
 <x-main>
-    <div class="px-40 mt-20">
+    <div class="px-2 mt-20 sm:px-20 sm:px-40">
         <h1 class="pb-20 text-3xl font-semibold text-center">Edit Category</h1>
         <form class="w-full" action="{{ route("category.update", $category->slug) }}" method="POST">
             @method("PUT")
@@ -22,7 +22,7 @@
                 type="slug" 
                 id="slug" 
                 name="slug"
-                value="{{ old("name") ?? $category->slug }}"
+                value="{{ old("slug") ?? $category->slug }}"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                 @error("slug")
                      <p class="text-sm text-red-600">{{ $message }}</p>

@@ -1,4 +1,4 @@
-<div class="relative max-w-screen-xl px-3 mx-auto mt-14 sm:px-5 sm:mt-28">
+<div class="relative max-w-screen-xl px-3 mx-auto mt-20 sm:px-5 sm:mt-28">
     <section class="bg-white dark:bg-gray-900">
         <div class="max-w-screen-xl px-4 mx-auto text-center sm:py-8 lg:py-16 lg:px-12">
             <h1 class="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Buat Blog Pribadimu Sendiri Dengan Sekali Klik</h1>

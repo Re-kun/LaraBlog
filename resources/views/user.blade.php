@@ -7,11 +7,17 @@
         <div class="w-[95%] md:mx-auto sm:mx-36">
             <div class="max-w-sm mb-5 rounded-lg ">
                 <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">
-                   
-                    <a href="">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $user->name }}</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700">{{ $user->email }}</p>
+
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <a href="{{ route("user.show", $user->username) }}">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $user->name }}</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700">{{ $user->username }}</p>
+                        </div>
+                       <img src="{{ asset("image/kazuma.png") }}" alt="" class="w-20 p-1 mt-5 rounded-full sm:block">
+                    </div>
+
                     <div class="flex items-center">
                         <a href="{{ route("user.edit", $user->username) }}">
                             <img src="{{ asset("icon/edit.svg") }}" width="19" alt="">

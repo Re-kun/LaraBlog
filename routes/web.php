@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware("guest")->group(function () {
-    // authentication
+    // // authentication
     Route::get("/login", [LoginController::class, "index"])->name("login");
     Route::post("/login", [LoginController::class, "login"]);
     Route::get("/register", [RegisterController::class, "index"]);
@@ -34,10 +35,11 @@ Route::middleware("auth")->group(function () {
     Route::post("/logout", LogoutController::class);
     Route::get("/profile", ProfileController::class)->name("profile");
     Route::resource("/post", PostController::class)->except(["index"]);
+    Route::post("/follow/{user:username}", [FollowsController::class, "follow"] )->name("follow");
 });
 
 Route::view('/', "home")->name("home");
 Route::view('/about', "about")->name("about");
 Route::get("/blog", BlogController::class)->name("blog");
-Route::resource("/category", CategoryController::class)->except("show"               );
+Route::resource("/category", CategoryController::class)->except("show");
 Route::resource("/user", UserController::class);

@@ -5,7 +5,6 @@
     </a>
     <div class="flex items-center md:order-2">
         @auth
-            <x-navbar.notification></x-navbar.notification>
             <x-navbar.profile></x-navbar.profile>
         @else  
           <span class="flex hidden md:flex">
