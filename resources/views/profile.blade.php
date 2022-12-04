@@ -2,7 +2,7 @@
     <div class="flex flex-col px-1 sm:px-5 md:justify-between">
         <div class="flex items-center justify-start md:flex-row">
             @if($user->image)
-                <img src="{{ asset("image/re.png") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
+                <img src="{{ asset("storage/$user->image") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
             @else
                 <img src="{{ asset("icon/profile.svg") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
             @endif
@@ -42,10 +42,7 @@
             </form>
             
             @else
-            <form action="{{ route("follow", $user->username) }}" method="POST">
-                @csrf
-                <button type="submit" ref="#" class="px-5 py-2 mr-3 text-sm font-medium text-white bg-blue-700 rounded-md sm:ml-5 sm:px-10 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Edit Profile</button>
-            </form>
+                <a href="/profile/edit" class="px-5 py-2 mr-3 text-sm font-medium text-white bg-blue-700 rounded-md sm:ml-5 sm:px-10 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ">Edit Profile</a>
             @endif
             </div>
         </div>
