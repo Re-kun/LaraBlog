@@ -35,6 +35,7 @@ Route::middleware("auth")->group(function () {
     Route::post("/logout", LogoutController::class);
     Route::get("/profile", [ProfileController::class, "index"])->name("profile");
     Route::get("/profile/edit", [ProfileController::class, "edit"])->name("profile.edit");
+    Route::put("/profile", [ProfileController::class, "update"])->name("profile.update");
     Route::resource("/post", PostController::class)->except(["index"]);
     Route::post("/follow/{user:username}", [FollowsController::class, "follow"] )->name("follow");
 });

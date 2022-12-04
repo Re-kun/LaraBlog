@@ -22,7 +22,13 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function edit (Request $request) {
+    public function edit () {   
+        return view("editProfile", [
+            "user" => auth()->user()
+        ]);
+    }
+
+    public function update (Request $request) {
         dd($request);
     }
 }
