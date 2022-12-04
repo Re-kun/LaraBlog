@@ -1,7 +1,11 @@
 <div class="my-2 ml-2">
     <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full lg:mr-5 md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
       <span class="sr-only">Open user menu</span>
-      <img class="w-8 h-8 rounded-full " src="{{ asset("image/kazuma.png") }}" alt="user photo">
+  @if(auth()->user()->image)
+      <img src="{{ asset("image/re.png") }}" alt="" class="w-8 h-8 rounded-full">
+  @else
+      <img src="{{ asset("icon/profile.svg") }}" alt="" class="w-8 h-8  bg-white  rounded-full">
+  @endif
     </button>
     <!-- Dropdown menu -->
     <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">

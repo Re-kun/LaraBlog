@@ -10,7 +10,7 @@
                             @if($post->image)
                                 <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("storage/$post->image") }}" alt="">
                             @else
-                                <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/megumin.png") }}" alt="">
+                                <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/1.png") }}" alt="">
                             @endif
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">

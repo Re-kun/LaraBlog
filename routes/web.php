@@ -33,7 +33,8 @@ Route::middleware("guest")->group(function () {
 
 Route::middleware("auth")->group(function () {
     Route::post("/logout", LogoutController::class);
-    Route::get("/profile", ProfileController::class)->name("profile");
+    Route::get("/profile", [ProfileController::class, "index"])->name("profile");
+    Route::get("/profile/edit", [ProfileController::class, "edit"])->name("profile.edit");
     Route::resource("/post", PostController::class)->except(["index"]);
     Route::post("/follow/{user:username}", [FollowsController::class, "follow"] )->name("follow");
 });

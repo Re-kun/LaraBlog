@@ -1,7 +1,11 @@
 <x-main>
     <div class="flex flex-col px-1 sm:px-5 md:justify-between">
         <div class="flex items-center justify-start md:flex-row">
-            <img src="{{ asset("image/kazuma.png") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block md:w-auto sm:w-32">
+            @if($user->image)
+                <img src="{{ asset("image/re.png") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
+            @else
+                <img src="{{ asset("icon/profile.svg") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
+            @endif
             <div class="p-4 ">
                 <div class="flex items-center w-full mt-5">
                     <div class="text-center sm:py-5 sm:pl-8 sm:pr-7">
@@ -19,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="justify-between sm:flex sm:items-center sm:mt-5 ">
+        <div class="justify-between ml-2 sm:flex sm:items-center sm:mt-5">
             <div>
                 <h5 class="mt-2 text-lg font-bold text-gray-900 sm:text-3xl dark:text-white">{{ $user->name }}</h5>
                 <p class="font-light text-gray-500 mb-7">{{ $user->username }}</p>
@@ -51,6 +55,7 @@
         <div class="text-4xl border-t border-gray-200 my-9 sm:my-0 sm:mb-9"></div>
         <div class="flex items-center justify-between w-full">
             <a href="/post/create" class="p-2 ml-2 text-sm bg-white border border-gray-300 rounded-lg hover:bg-gray-100">+ Add Post</a>
+        @can("admin")
             <div class="flex">
                 <a href="/category" class="mr-2"> 
                     <img src="{{ asset("icon/category.svg") }}" width="20" alt="">
@@ -59,6 +64,7 @@
                     <img src="{{ asset("icon/user.svg") }}" width="20" alt="">
                 </a>
             </div>
+        @endcan
         </div>
     @if(session()->has("success"))
         <div class="flex p-4 mt-5 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
@@ -75,7 +81,7 @@
                             @if($post->image)
                               <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("storage/$post->image") }}" alt="">
                             @else
-                              <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/megumin.png") }}" alt="">
+                              <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/1.png") }}" alt="">
                             @endif
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">

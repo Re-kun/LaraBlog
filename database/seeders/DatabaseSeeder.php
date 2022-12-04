@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             "name" => "kazuto",
             "username" => "kazuto",
             "email" => "kazuto@gmail.com",
-            "password" => bcrypt(123)
+            "password" => bcrypt(123),
+            "role" => "admin"
         ]);
 
         Post::factory()->count(7)->create();

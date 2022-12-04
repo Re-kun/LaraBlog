@@ -1,4 +1,4 @@
-# Nodeblog
+# LaraBlog
 Sebuah blog system berbasis aplikasi web dengan arsitektur monolith
 
 ## Table of contents
