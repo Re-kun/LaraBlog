@@ -12,30 +12,14 @@ class viewsTest extends TestCase
     
      /** @test */ 
    public function home () {
-
-          $this->withoutExceptionHandling();
-
+           $this->withoutExceptionHandling();
           $this->get(route("home"))->assertStatus(200);
    }
 
     /** @test */ 
     public function about () {
-
           $this->withExceptionHandling();
-
           $this->get("/about")->assertStatus(200);
-   }
-
-    /** @test */ 
-    public function blog () {
-          $this->withExceptionHandling();
-          $this->get("/blog")->assertStatus(200);
-   }
-
-    /** @test */ 
-   public function category () {
-     $this->withExceptionHandling();
-     $this->get("/category")->assertStatus(200);
    }
 }
 
