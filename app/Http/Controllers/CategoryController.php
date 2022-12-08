@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
 
     public function __construct(){
-        return $this->middleware("auth")->except("index", "show");
+        return $this->middleware("auth")->except("index");
     }
 
     /**
@@ -60,6 +60,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        return abort(404);
     }
 
     /**

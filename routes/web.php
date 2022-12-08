@@ -43,5 +43,5 @@ Route::middleware("auth")->group(function () {
 Route::view('/', "home")->name("home");
 Route::view('/about', "about")->name("about");
 Route::get("/blog", BlogController::class)->name("blog");
-Route::resource("/category", CategoryController::class)->except("show");
+Route::resource("/category", CategoryController::class);
 Route::resource("/user", UserController::class);

@@ -1,5 +1,5 @@
 # LaraBlog
-Sebuah blog system berbasis aplikasi web dengan arsitektur monolith
+Sebuah blog system berbasis aplikasi web dibuat dengan laravel
 
 ## Table of contents
 
@@ -12,14 +12,27 @@ Sebuah blog system berbasis aplikasi web dengan arsitektur monolith
 ## Overview
 
 ### Screenshot
+<div style="display:flex;">
+    <div>
+        <img src="./screenshot/1.png" alt="drawing" width="400"  loading="lazy"/>
+        <img src="./screenshot/2.png" alt="drawing" width="400"  loading="lazy"/>
+    </div>
+    <div>
+        <img src="./screenshot/3.png" alt="drawing" width="400"  loading="lazy"/>
+        <img src="./screenshot/4.png" alt="drawing" width="400"  loading="lazy"/>
+    </div>
+<div>
 
-![](./new_screenshot.png)
+
 
 ### Features
 
 - Mampu membuat, menghapus, dan mengedit post
 - Memiliki fitur pencarian yang fleksibel.
 - Dapat menambahkan, menghapus, dan modifikasi category dan user.
+- Memiliki sistem roling
+- Memiliki fitur autentikasi dan otorisasi
+- Memiliki fitur follows
 - Memanfaatkan mysql sebagai databasenya.
 
 ## Technology
@@ -29,7 +42,8 @@ Sebuah blog system berbasis aplikasi web dengan arsitektur monolith
 - Tailwind Css
 - JavaScript
 - Nodejs
-- Express.js 
+- Php
+- Laravel
 - Mysql
 
 ## Author
