@@ -8,16 +8,16 @@
                     <div class="max-w-sm mb-5 rounded-lg ">
                         <div>
                             @if($post->image)
-                                <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("storage/$post->image") }}" alt="">
+                                <img class="object-cover h-48 rounded-lg w-96" loading="lazy" src="{{ asset("storage/$post->image") }}" alt="image post">
                             @else
-                                <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/1.png") }}" alt="">
+                                <img class="object-cover h-48 rounded-lg w-96"loading="lazy" src="{{ asset("image/1.png") }}" alt="image post">
                             @endif
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">
                             <div class="grid grid-cols-4 gap-4 mb-2">
                                 <a href="/blog?category={{ $post->category->slug }}" class="py-1 text-sm text-center rounded-md bg-slate-200 text-slate-500">{{ $post->category->name }}</a>
                             </div>
-                            <a href="#">
+                            <a href="{{ route("post.show", $post->slug) }}">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $post->title }}</h5>
                             </a>
                             <p class="mb-3 font-normal text-gray-700">{{ $post->created_at->diffForHumans() }}</p>
@@ -27,6 +27,6 @@
                 </div>
             @endforeach
         </div>
-        {{ $posts->links() }}
     </div>
+    {{ $posts->links() }}
 </x-main>

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -44,7 +45,8 @@ class Post extends Model
     }
 
     public function storePost($request) {
-        
+
+
         $newPost = [
             "user_id" => Auth::user()->id,
             "category_id" => $request->category_id,
@@ -54,7 +56,7 @@ class Post extends Model
         ];
 
         if ($request->image){
-            $newPost->image = $request->image->store("post-images");
+            $newPost["image"] = $request->image->store("post-images");
         }
 
         Post::create($newPost);

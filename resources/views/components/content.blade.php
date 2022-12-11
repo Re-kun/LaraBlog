@@ -6,8 +6,8 @@
             <p>We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick.</p>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-8">
-            <img class="w-full rounded-lg" src="{{ asset("image/2.png") }}" alt="office content 1">
-            <img class="w-full mt-4 rounded-lg lg:mt-10"src="{{ asset("image/3.png") }}" alt="office content 2">
+            <img class="w-full rounded-lg" src="{{ asset("image/2.png") }}" loading="lazy" alt="content- 1">
+            <img class="w-full mt-4 rounded-lg lg:mt-10"src="{{ asset("image/3.png") }}" loading="lazy" alt="content 2">
         </div>
     </div>
 </section>

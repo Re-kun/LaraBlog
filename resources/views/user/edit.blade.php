@@ -6,14 +6,14 @@
             @csrf
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">name</label>
-                <input type="name" value=" {{ old("name") ?? $user->name }}" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="name">
+                <input type="text" value=" {{ old("name") ?? $user->name }}" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="name">
                 @error("name")
                      <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">
                 <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">username</label>
-                <input type="username" value=" {{ old("username") ?? $user->username }}" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="username">
+                <input type="text" value=" {{ old("username") ?? $user->username }}" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="username">
                 @error("username")
                      <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror

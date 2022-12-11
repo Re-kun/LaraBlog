@@ -13,13 +13,13 @@
                     <p class="mb-3 font-normal text-gray-700">ini adalah sebuah category</p>
                     <div class="flex items-center">
                         <a href="{{ route("category.edit", $category->slug) }}">
-                            <img src="{{ asset("icon/edit.svg") }}" width="19" alt="">
+                            <img src="{{ asset("icon/edit.svg") }}" loading="lazy" width="19" alt="edit image">
                         </a>
                         <form method="POST" action="{{ route("category.destroy", $category->slug) }}" class="mt-2">
                             @method("DELETE")
                             @csrf
                             <button type="submit">
-                                <img src="{{ asset("icon/remove.svg") }}" width="25" alt="" class="ml-2">
+                                <img src="{{ asset("icon/remove.svg") }}" width="25" alt="remove icon" loading="lazy" class="ml-2">
                             </button>
                         </form>
                     </div>

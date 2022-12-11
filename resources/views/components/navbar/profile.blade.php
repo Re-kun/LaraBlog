@@ -2,9 +2,9 @@
     <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full lg:mr-5 md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
       <span class="sr-only">Open user menu</span>
   @if(auth()->user()->image)
-      <img src="{{ asset("storage/" . Auth()->user()->image ) }}" alt="" class="w-8 h-8 rounded-full">
+      <img src="{{ asset("storage/" . Auth()->user()->image ) }}" alt="profile icon" loading="lazy" class="w-8 h-8 rounded-full">
   @else
-      <img src="{{ asset("icon/profile.svg") }}" alt="" class="w-8 h-8 bg-white rounded-full">
+      <img src="{{ asset("icon/profile.svg") }}" alt="profile icon" loading="lazy" class="w-8 h-8 bg-white rounded-full">
   @endif
     </button>
     <!-- Dropdown menu -->

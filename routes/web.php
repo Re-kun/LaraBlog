@@ -24,7 +24,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware("guest")->group(function () {
-    // // authentication
     Route::get("/login", [LoginController::class, "index"])->name("login");
     Route::post("/login", [LoginController::class, "login"]);
     Route::get("/register", [RegisterController::class, "index"]);

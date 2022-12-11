@@ -2,9 +2,9 @@
     <div class="flex flex-col px-1 sm:px-5 md:justify-between">
         <div class="flex items-center justify-start md:flex-row">
             @if($user->image)
-                <img src="{{ asset("storage/$user->image") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
+                <img src="{{ asset("storage/$user->image") }}" alt="profile image" loading="lazy" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem] sm:h-[8.3rem]">
             @else
-                <img src="{{ asset("icon/profile.svg") }}" alt="" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
+                <img src="{{ asset("icon/profile.svg") }}" alt="profile image" loading="lazy" class="w-20 p-1 mt-5 border-2 border-gray-300 rounded-full sm:block sm:w-[8.3rem]">
             @endif
             <div class="p-4 ">
                 <div class="flex items-center w-full mt-5">
@@ -55,10 +55,10 @@
         @can("admin")
             <div class="flex">
                 <a href="/category" class="mr-2"> 
-                    <img src="{{ asset("icon/category.svg") }}" width="20" alt="">
+                    <img src="{{ asset("icon/category.svg") }}" width="20" alt="categories" loading="lazy">
                 </a>
                 <a href="/user" class="ml-3 mr-2"> 
-                    <img src="{{ asset("icon/user.svg") }}" width="20" alt="">
+                    <img src="{{ asset("icon/user.svg") }}" width="20" alt="users">
                 </a>
             </div>
         @endcan
@@ -76,9 +76,9 @@
                     <div class="max-w-sm mb-5 rounded-lg ">
                         <div>
                             @if($post->image)
-                              <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("storage/$post->image") }}" alt="">
+                              <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("storage/$post->image") }}" loading="lazy" alt="image post">
                             @else
-                              <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/1.png") }}" alt="">
+                              <img class="object-cover h-48 rounded-lg w-96" src="{{ asset("image/1.png") }}" loading="lazy" alt="image post">
                             @endif
                         </div>
                         <div class="p-5 mt-3 bg-white border border-gray-200 shadow-md">
