@@ -4,6 +4,7 @@
         <form class="w-full" action="{{ route("category.update", $category->slug) }}" method="POST">
             @method("PUT")
             @csrf
+            <input type="hidden" name="id" value="{{ $category->id }}">
             <div class="mb-6">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">name</label>
                 <input 

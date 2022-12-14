@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditUserRequest;
 use App\Http\Requests\userRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -83,7 +84,7 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(EditUserRequest $request, User $user)
     {
         $updateData = $request->validate([
            "name" => "required",

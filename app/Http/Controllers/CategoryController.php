@@ -83,7 +83,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(categoryRequest $request, Category $category)
     {
         $updateCategory = [
             "name" => $request->name,
