@@ -12,7 +12,7 @@ Sebuah blog system berbasis aplikasi web dibuat dengan laravel
 ## Overview
 
 ### Screenshot
-<div style="display:flex;">
+<div style="display:flex; justify-content: center;">
     <div>
         <img src="./screenshot/1.png" alt="drawing" width="400"  loading="lazy"/>
         <img src="./screenshot/2.png" alt="drawing" width="400"  loading="lazy"/>
